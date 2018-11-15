@@ -8,17 +8,11 @@
     renderBoard(year);
 
     // bind events
-    addListener('click', '.flip', flipBoard);
     addListener('mousedown', '.lit', toggleCell);
     addListener('touchstart', '.lit', toggleCell);
     addListener('mouseover', '.lit', toggleCell, function(event) {
         return 'buttons' in event && event.buttons > 0;
     });
-
-    function flipBoard() {
-        var inner = document.getElementById("inner");
-        inner.className = inner.className ? "" : "flipped";
-    }
 
     function renderBoard(year) {
         board.innerHTML = "";
